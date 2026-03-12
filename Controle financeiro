@@ -1,0 +1,39 @@
+saldo = 0
+historico = []
+
+while True:
+    print("\n=== CONTROLE FINANCEIRO ===")
+    print("1 - Registrar receita")
+    print("2 - Registrar despesa")
+    print("3 - Ver saldo")
+    print("4 - Ver histórico")
+    print("5 - Sair")
+
+    opcao = input("Escolha uma opção: ")
+
+    if opcao == "1":
+        valor = float(input("Digite o valor da receita: "))
+        saldo += valor
+        historico.append(f"Receita: +{valor}")
+        print("Receita registrada!")
+
+    elif opcao == "2":
+        valor = float(input("Digite o valor da despesa: "))
+        saldo -= valor
+        historico.append(f"Despesa: -{valor}")
+        print("Despesa registrada!")
+
+    elif opcao == "3":
+        print("Saldo atual:", saldo)
+
+    elif opcao == "4":
+        print("\nHistórico:")
+        for h in historico:
+            print(h)
+
+    elif opcao == "5":
+        print("Encerrando sistema...")
+        break
+
+    else:
+        print("Opção inválida.")
